@@ -61,7 +61,7 @@ export default function ProfilePage(props) {
   const [preview, setPreview] = React.useState(false);
   const [s, setS] = React.useState([]);
   const [privatetask, setprivatetaskOpen] = React.useState(false);
-
+  const [sbn,setsbn]=React.useState('');
 
   const [title, setTitle] = React.useState('');
   const [servicetype, setServicetype] = React.useState('');
@@ -92,7 +92,7 @@ export default function ProfilePage(props) {
     customerService.AllSprofiles()
       .then((result) => {
         setS(result.data)
-        console.log(result.data)
+  
       });
 
       
@@ -131,6 +131,13 @@ let searchbyall=()=>{
   setS(result.data);
   })
 
+}
+const searchname=()=>{
+
+  customerService.searchname(sbn)
+  .then((result)=>{
+    setS(result.data);
+    })
 }
 let getData=(id)=>{
 
@@ -433,9 +440,10 @@ setprivatetaskOpen(true);
                             <GridContainer justify="center">
                               <GridItem md={6}>
                                 <div>
-                                  <Typography variant="h6">Search</Typography>
-                                  <TextField
-                                    label="Browse..." />
+                                  <Typography variant="h6" >Search</Typography>
+                                  <TextField onChange={(e)=>{setsbn(e.target.value)}}
+                                    label="Enter Name" />
+                                    <Button style={{marginLeft:'10px'}} color="warning" onClick={()=>{searchname()}}>Search</Button>
                                 </div>
                               </GridItem>
 
@@ -444,6 +452,7 @@ setprivatetaskOpen(true);
                                 <div>
                                   <Typography variant="h6">Category</Typography>
                                   <CustomDropdown
+                                  color="rose"
           noLiPadding
           buttonText=""
           buttonProps={{
@@ -761,7 +770,7 @@ setprivatetaskOpen(true);
                                 <Grid item md={10}>
                           <li><TextField fullWidth onChange={(e)=>{setDescription(e.target.value)}}label="Description"></TextField></li> </Grid>
                           <br/>
-                          <li style={{marginLeft:'22%'}}><Button onClick={(e)=>sendptask(e,currentS)}>Send</Button><Button onClick={()=>{setprivatetaskOpen(false)}}>Close</Button></li>
+                          <li style={{marginLeft:'25%'}}><Button color="primary" style={{marginRight:'19px'}} onClick={(e)=>sendptask(e,currentS)}>Send</Button><Button color="danger" onClick={()=>{setprivatetaskOpen(false)}}>Close</Button></li>
                         </ul>
                       </Grid>
                      </Paper>

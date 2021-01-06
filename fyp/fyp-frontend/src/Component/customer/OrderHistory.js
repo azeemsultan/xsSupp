@@ -70,13 +70,13 @@ const OrderHistory=()=> {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title</StyledTableCell>
-            <StyledTableCell align="right">Start Time -- End Time</StyledTableCell>
-            <StyledTableCell align="right">Month</StyledTableCell>
-            <StyledTableCell align="right">Service Type</StyledTableCell>
-            <StyledTableCell align="right">Location</StyledTableCell>
-            <StyledTableCell align="right">Bill</StyledTableCell>
-            <StyledTableCell align="right">Email</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}}>Title</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}} align="left">Start Time -- End Time</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}} align="left">Month</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}} align="left">Service Type</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}} align="left">Location</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}} align="left">Bill</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#3264a8'}} align="left">Email</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -85,12 +85,12 @@ const OrderHistory=()=> {
               <StyledTableCell component="th" scope="row">
               {t.title}
               </StyledTableCell>
-              <StyledTableCell align="right">{t.starttime} -- {t.endtime} </StyledTableCell>
-              <StyledTableCell align="right">{t.month}</StyledTableCell>
-              <StyledTableCell align="right">{t.servicetype}</StyledTableCell>
-              <StyledTableCell align="right">{t.location}</StyledTableCell>
-              <StyledTableCell align="right">{(t.month*t.permonth)+(t.pertask)+(t.perhour*(parseInt(t.endtime)-parseInt(t.starttime))*(t.month*30))}</StyledTableCell>
-              <StyledTableCell align="right">     {t.serviceprovideremail}</StyledTableCell>
+              <StyledTableCell align="left">{t.starttime} -- {t.endtime} </StyledTableCell>
+              <StyledTableCell align="left">{t.month}</StyledTableCell>
+              <StyledTableCell align="left">{t.servicetype}</StyledTableCell>
+              <StyledTableCell align="left">{t.location}</StyledTableCell>
+              <StyledTableCell align="left">{(t.month*t.permonth)+(t.pertask)+(t.perhour*(parseInt(t.endtime)-parseInt(t.starttime))*(t.month*30))}</StyledTableCell>
+              <StyledTableCell align="left">     {t.serviceprovideremail}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

@@ -26,12 +26,15 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js"
 
 
 
+
 // Sections for this page
 import HeaderHome from "../../components/Header/HeaderHome"
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
 import { Container, Paper, Typography } from "@material-ui/core";
+
+import WorkSection from "./Contact";
+
 
 const dashboardRoutes = [];
 const responsive = {

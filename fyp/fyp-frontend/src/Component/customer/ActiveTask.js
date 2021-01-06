@@ -70,13 +70,13 @@ const ActiveTask=()=> {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title</StyledTableCell>
-            <StyledTableCell align="right">Start Time -- End Time</StyledTableCell>
-            <StyledTableCell align="right">Month</StyledTableCell>
-            <StyledTableCell align="right">Service Type</StyledTableCell>
-            <StyledTableCell align="right">Location</StyledTableCell>
-            <StyledTableCell align="right">Bill</StyledTableCell>
-            <StyledTableCell align="right">Email</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#694496'}}>Title</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#694496'}} align="right">Start Time -- End Time</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#694496'}} align="right">Month</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#694496'}} align="right">Service Type</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#694496'}} align="right">Location</StyledTableCell>
+            <StyledTableCell style={{backgroundColor:'#694496'}} align="right">Bill</StyledTableCell>
+            <StyledTableCell  style={{backgroundColor:'#694496'}} align="right">Email</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
