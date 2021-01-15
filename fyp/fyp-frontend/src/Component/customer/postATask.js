@@ -1,4 +1,4 @@
-import { Container, Grid, InputLabel, NativeSelect, Paper, TextField, Typography } from '@material-ui/core';
+import { Button, Container, Grid, InputLabel, NativeSelect, Paper, TextField, Typography } from '@material-ui/core';
 import React from 'react';
 import * as postService from'../../Axios-Actions/postService';
 
@@ -361,8 +361,9 @@ console.log(  this.state.title,
            </Typography>
           </div>
          </div>
-         <button style={{marginTop:'20px',marginBottom:'20px',marginLeft:'30%',width:'40%',marginRight:'30%',backgroundColor:'#a62e9c',color:'white',height:'30px'
-        ,borderRadius:'5px'}}>Post</button>
+         <button style={{marginTop:'20px',marginBottom:'20px',marginLeft:'30%',width:'30%',marginRight:'30%',backgroundColor:'#a62e9c',color:'white',height:'35px'
+        ,borderRadius:'5px'}}>POST</button>
+ 
          </form>
          </Paper>
          </Grid>

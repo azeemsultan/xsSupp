@@ -24,6 +24,7 @@ import NavPills from "../../components/NavPills/NavPills.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 
 import profile1 from "../../assets/img/faces/christian.jpg";
+import no from "../../assets/img/faces/no.png"
 import * as customerService from "../../Axios-Actions/customerService"
 import studio1 from "../../assets/img/examples/servant2.jpg";
 
@@ -255,10 +256,10 @@ setprivatetaskOpen(true);
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
-                  <div >  
+                  <div style={{marginRight:'12px'}} >  
                     <form onSubmit={(e) => up(e)}>   <input style={{ display: 'none' }} type='file' id="file" name='image' onChange={(e) => ch(e)} accept="image/*" />
                     <label for="file">   
-                      <img style={{ maxHeight: '200px', maxWidth: '200px' }} src={prof.imageURL || profile1} alt="No Content" className={imageClasses} />
+                      <img style={{ maxHeight: '200px', maxWidth: '200px' }} src={prof.imageURL || no } alt="No Content" className={imageClasses} />
                     </label>
                   </form>
 
@@ -505,7 +506,7 @@ setprivatetaskOpen(true);
                                     <Card style={{ maxWidth: '300px', marginTop: '10px',marginRight:'30px' }} >
                                       <CardActionArea >
                                         <CardContent >
-                                          <img src={st.imageURL || studio1} style={{ maxHeight: "200px", maxWidth: "300px", borderRadius:'16px 16px 0px 0px' }}></img>
+                                          <img src={st.imageURL || studio1}  style={{ maxHeight: "200px", maxWidth: "300px", borderRadius:'16px 16px 0px 0px' }}></img>
                                           <Typography gutterBottom variant="h6" component="h2">
                                             {st.serviceprovidername}
                                           </Typography>
@@ -520,7 +521,7 @@ setprivatetaskOpen(true);
                                       <CardActions>
 
                                         <Button size="small" color="primary" style={{ marginLeft: "50px" }}
-                                      onClick={() => viewSp(st.serviceprovider,st.imageURL)}
+                                      onClick={() => viewSp(st.serviceprovider,st.imageURL||studio1)}
                                     >
                                           View Details
                                                    </Button>
