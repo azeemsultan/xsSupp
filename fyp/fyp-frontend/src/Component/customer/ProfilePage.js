@@ -630,6 +630,8 @@ setprivatetaskOpen(true);
       <Modal style={{display:'flex',alignItems:'center',justifyContent:'center'}}
                        open={openService}
                        onClose={!openService} 
+                       aria-labelledby="simple-modal-title"
+                       aria-describedby="simple-modal-description"
                        closeAfterTransition
                        BackdropComponent={Backdrop}
                        BackdropProps={{
