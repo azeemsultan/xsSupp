@@ -88,6 +88,9 @@ router.put('/acceptTask:id', async ( req , res )=>{
     let t= await Task.findOne({serviceprovider:jwt.id,status:"in progress"});
 
 if(!t){
+  const text="Your task has been accepted by a serviceprovider. ";
+  await email(user.customeremail, " Task Accepted by ServiceProvider ", text);
+
     await Task.findByIdAndUpdate(
         user._id,
         {
@@ -98,7 +101,7 @@ if(!t){
         },
         { new: true }
       );
-
+  
       res.send("successfully accepted");
       }else{
         res.send("already in progress with someone else");

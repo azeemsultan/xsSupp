@@ -60,6 +60,9 @@ router.post('/pTask', async ( req , res ) =>{
     let user = await PTask.findOne({_id:req.body.taskid});
     let ser= await ServiceProvider.findOne({_id:jwt.id});
 
+    const text="Your task has been accepted by a serviceprovider. ";
+    await email(user.customeremail, " Task Accepted by ServiceProvider ", text);
+  
     await PTask.findByIdAndUpdate(
         user._id,
         {

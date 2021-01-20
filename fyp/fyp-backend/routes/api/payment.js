@@ -66,11 +66,13 @@ router.get('/paymentbyCash', async( req , res )=>{
     });
 
     await work.save();
+    const ser = await ServiceProvider.findById({_id:table.serviceprovider});
 
     //Order History
     order = new OrderHistory({
       customer:table.customer,
       customeremail:table.customeremail,
+      name: ser.firstname+" "+ser.lastname,
       title:table.title,
       servicetype:table.servicetype,
       location:table.location,
@@ -164,10 +166,12 @@ router.get('/paymentbyCard', async( req , res )=>{
   
       await work.save();
   
+      const ser = await ServiceProvider.findById({_id:table.serviceprovider});
       //Order History
       order = new OrderHistory({
         customer:table.customer,
         customeremail:table.customeremail,
+        name: ser.firstname+" "+ser.lastname,
         title:table.title,
         servicetype:table.servicetype,
         location:table.location,

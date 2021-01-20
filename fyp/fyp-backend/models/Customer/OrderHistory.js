@@ -10,6 +10,10 @@ const orderHistory= mongoose.model("OrderHistory",mongoose.Schema({
       ref: "Customer",
       required: true
     },
+    name:{
+      type: String,
+      required:true
+    },
     title:{
       type: String,
       maxlenght: 255,

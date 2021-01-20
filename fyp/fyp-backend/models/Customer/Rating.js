@@ -11,6 +11,10 @@ const rating= mongoose.model("Rating",mongoose.Schema({
       ref: "Customer",
       required: true
     },
+    name:{
+      type:String,
+      required:true
+    },
     reviewtitle: {
       type: String,
       maxlenght: 55,

@@ -12,6 +12,7 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { withStyles } from "@material-ui/core/styles";
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 
 let la,ln;
@@ -73,6 +74,7 @@ class customerSignup extends Component {
       invalid: false,
       loading: false,
       error: "",
+      err:true
     };
 
     this.onChange = this.onChange.bind(this);
@@ -134,13 +136,12 @@ class customerSignup extends Component {
     if (errors) {
      console.log(errors);   
      console.log("validation error");
+     this.setState({err:false})
       return;
     }
     if(data.password===data.confirmpassword){
       
-      if(!la||!ln){
-        alert("In order to signup you need to give access for location.");
-      }else{
+  
        
       authService
       .CustomerSignUp(
@@ -162,7 +163,7 @@ class customerSignup extends Component {
       .catch((err) => {
         this.setState({ invalid: true });
         console.log("Server error");
-      });}
+      });
     }else{
       console.log("password and confirm password are not same.");
       return;
@@ -266,10 +267,16 @@ class customerSignup extends Component {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <FormControlLabel
-                    control={<Checkbox value="allowExtraEmails" color="primary" />}
-                    label="I want to receive inspiration, marketing promotions and updates via email."
-                  />
+                  <div>
+                    {this.state.err==false? (<div>
+                      <Alert severity="warning">
+  <AlertTitle>Warning</AlertTitle>
+  <div> {JSON.stringify(this.state.error)}
+   </div>
+  This is a warning alert — <strong>check it out!</strong>
+</Alert>
+                       </div>): (<div> </div>)}
+                  </div>
                 </Grid>
               </Grid>
               <Button

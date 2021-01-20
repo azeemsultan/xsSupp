@@ -110,7 +110,7 @@ return (
                     <Grid container>
                     <Grid item md={3}></Grid>
                     <Paper elevation={2} style={{marginTop:'40px'}} >
-                    <center>
+                    <center style={{backgroundColor:'#6b54c4',color:'white'}}>
                             <br/>
                         <Typography variant="h5">Send a Private Task</Typography>
                         <Divider/>
@@ -136,6 +136,8 @@ return (
                                 <option value="Cook">Cook</option>
                                 <option value="Plumber">Plumber</option>
                                 <option value="Shopkeeper">Shopkeeper</option>
+                                <option value="Driver">Driver</option>
+                                <option value="Tailor">Tailor</option>
                                 
                                 </select> </span>
              </Typography></li>
@@ -194,7 +196,7 @@ return (
                                 <Grid item md={10}>
                           <li><TextField fullWidth onChange={(e)=>{setDescription(e.target.value)}}label="Description"></TextField></li> </Grid>
                           <br/>
-                          <li style={{marginLeft:'25%'}}><Button variant="contained" color="primary" style={{marginRight:'20px'}} onClick={(e)=>sendptask(e,currentS)}>Send</Button><Button variant="contained" color="secondary" onClick={()=>{setprivatetaskOpen(false)}}>Close</Button></li>
+                          <li style={{marginLeft:'22%'}}><Button onClick={(e)=>sendptask(e,currentS)} color="primary" variant="contained">Send</Button><Button variant="contained" color="warning" style={{marginLeft:'10px',backgroundColor:'#675e8c',color:'white'}} onClick={()=>{setprivatetaskOpen(false)}}>Close</Button></li>
                         </ul>
                       </Grid>
                      </Paper>
@@ -231,8 +233,8 @@ return (
                   </Marker>
               )}
                  
-                 {worker.map(w=>(
-
+                 {worker.map(w=>( w.Longitude&&w.Latitude?(
+                                     
                                      <Marker
                                      key={w._id}
                                      icon={markerend}
@@ -251,7 +253,8 @@ return (
                                      </Popup>
                                    
                                      </Marker>
-                                     
+                                       
+                 ):null
                  ))}
                   
     </Map>
@@ -260,4 +263,4 @@ return (
 
 );
 
-} 
+}

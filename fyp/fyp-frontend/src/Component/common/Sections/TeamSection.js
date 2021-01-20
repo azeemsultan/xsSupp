@@ -85,7 +85,7 @@ export default function TeamSection() {
                 <img src={ubaid} style={{maxWidth:'150px',maxHeight:'150'}} alt="..." className={imageClasses} />
               </GridItem>
               <Typography className={classes.cardTitle}>
-                Ubaid Lkhan
+                Ubaid khan
                 <br />
                 <small className={classes.smallTitle}>Developer</small>
               </Typography>
@@ -130,7 +130,7 @@ export default function TeamSection() {
               <Typography className={classes.cardTitle}>
                 Usman Zafar
                 <br />
-                <small className={classes.smallTitle}>Database eNigger</small>
+                <small className={classes.smallTitle}>Tester</small>
               </Typography>
               <CardBody>
                 <Typography className={classes.description}>

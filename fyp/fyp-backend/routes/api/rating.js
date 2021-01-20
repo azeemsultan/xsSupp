@@ -19,6 +19,7 @@ router.post('/rate' , async( req, res )=>{
 
         customer: jwt.id,
         customeremail: cus.email,
+        name: cus.firstname+" "+cus.lastname,
         reviewtitle: req.body.rtitle,
         review: req.body.rreview,
         like:0,

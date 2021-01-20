@@ -25,11 +25,9 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>Let{"'"}s talk product</h2>
           <Typography className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+          Tell us what you need. It's FREE to post, Get offers from trusted Taskers and view profiles,
+          Choose the right person for your task and get it done.
+            
           </Typography> 
         </GridItem>
       </GridContainer>
